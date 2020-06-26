@@ -38,7 +38,5 @@
             </plugin>
         </plugins>
     </build>
-    <scm>
-        <developerConnection>scm:git:git@github.com:Daniel-E-Ortiz/spring-boot-pet-clinic.git</developerConnection>
-    </scm>
+
 </project>
