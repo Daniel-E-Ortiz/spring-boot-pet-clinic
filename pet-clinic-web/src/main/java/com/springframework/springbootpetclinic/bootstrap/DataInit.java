@@ -46,18 +46,18 @@ public class DataInit implements CommandLineRunner {
         cat.setName("Cat");
         PetType savedCatPetType = petTypeService.save(cat);
 
-        Speciality radiology = new Speciality();
+        Specialty radiology = new Specialty();
         radiology.setDescription("Radiology");
-        Speciality savedRadiology = specialtyService.save(radiology);
+        Specialty savedRadiology = specialtyService.save(radiology);
 
 
-        Speciality surgery = new Speciality();
+        Specialty surgery = new Specialty();
         surgery.setDescription("Surgery");
-        Speciality savedSurgery = specialtyService.save(surgery);
+        Specialty savedSurgery = specialtyService.save(surgery);
 
-        Speciality dentistry = new Speciality();
+        Specialty dentistry = new Specialty();
         dentistry.setDescription("Dentistry");
-        Speciality savedDentistry = specialtyService.save(dentistry);
+        Specialty savedDentistry = specialtyService.save(dentistry);
 
 
         Owner owner1 = new Owner();
@@ -99,15 +99,15 @@ public class DataInit implements CommandLineRunner {
         Vet vet1 = new Vet();
         vet1.setFirstName("Matt");
         vet1.setLastName("Damon");
-        vet1.getSpecialities().add(savedRadiology);
-        vet1.getSpecialities().add(savedSurgery);
+        vet1.getSpecialties().add(savedRadiology);
+        vet1.getSpecialties().add(savedSurgery);
 
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Daniel");
         vet2.setLastName("Riccardo");
-        vet2.getSpecialities().add(savedDentistry);
+        vet2.getSpecialties().add(savedDentistry);
 
         vetService.save(vet2);
 
