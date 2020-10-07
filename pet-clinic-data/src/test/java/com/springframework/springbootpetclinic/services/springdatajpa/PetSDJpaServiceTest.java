@@ -72,9 +72,10 @@ class PetSDJpaServiceTest {
     void findById() {
         when(petRepository.findById(anyLong()))
                 .thenReturn(Optional.of(pet1));
-        Pet pet = service.findById(1L);
+        Pet returnedPet = service.findById(1L);
 
-        assertNotNull(pet);
+        assertEquals("Stella", returnedPet.getName());
+        assertNotNull(returnedPet);
 
         verify(petRepository).findById(anyLong());
     }
@@ -83,9 +84,9 @@ class PetSDJpaServiceTest {
     void findByIdNotExist() {
         when(petRepository.findById(9L))
                 .thenReturn(Optional.empty());
-        Pet pet = service.findById(9L);
+        Pet returnedPet = service.findById(9L);
 
-        assertNull(pet);
+        assertNull(returnedPet);
 
         verify(petRepository).findById(anyLong());
     }
