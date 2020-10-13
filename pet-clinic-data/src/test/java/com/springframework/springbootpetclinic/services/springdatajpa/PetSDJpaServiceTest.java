@@ -36,19 +36,19 @@ class PetSDJpaServiceTest {
 
     @BeforeEach
     void setUp() {
-        pet1 = Pet.builder()
+        pet1 = Pet.petBuilder()
                 .id(1L)
                 .name("Stella")
-                .petType(PetType.builder().name("Dog").build())
+                .petType(PetType.petTypeBuilder().name("Dog").build())
                 .birthDate(LocalDate.now())
-                .owner(Owner.builder().id(3L).lastName("DogOwner").build())
+                .owner(Owner.ownerBuilder().id(3L).lastName("DogOwner").build())
                 .build();
-        pet2 = Pet.builder()
+        pet2 = Pet.petBuilder()
                 .id(2L)
                 .name("Baxter")
-                .petType(PetType.builder().name("Cat").build())
+                .petType(PetType.petTypeBuilder().name("Cat").build())
                 .birthDate(LocalDate.now())
-                .owner(Owner.builder().id(4L).lastName("CatOwner").build())
+                .owner(Owner.ownerBuilder().id(4L).lastName("CatOwner").build())
                 .build();
     }
 

@@ -43,7 +43,7 @@ class OwnerSDJpaServiceTest {
 
     @BeforeEach
     void setUp(){
-        returnedOwner = Owner.builder().id(ID).lastName(LAST_NAME).build();
+        returnedOwner = Owner.ownerBuilder().id(ID).lastName(LAST_NAME).build();
     }
 
     @Test
@@ -59,8 +59,8 @@ class OwnerSDJpaServiceTest {
     @Test
     void findAll() {
         Set<Owner> ownerSet = new HashSet<>();
-        ownerSet.add(Owner.builder().id(2L).build());
-        ownerSet.add(Owner.builder().id(3L).build());
+        ownerSet.add(Owner.ownerBuilder().id(2L).build());
+        ownerSet.add(Owner.ownerBuilder().id(3L).build());
 
         when(ownerRepository.findAll()).thenReturn(ownerSet);
 
@@ -93,7 +93,7 @@ class OwnerSDJpaServiceTest {
 
     @Test
     void save() {
-        Owner testOwnerToSave = Owner.builder().id(ID).lastName(LAST_NAME).build();
+        Owner testOwnerToSave = Owner.ownerBuilder().id(ID).lastName(LAST_NAME).build();
 
         when(ownerRepository.save(any()))
                 .thenReturn(returnedOwner);

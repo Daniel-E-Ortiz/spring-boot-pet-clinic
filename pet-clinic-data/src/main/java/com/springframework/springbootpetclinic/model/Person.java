@@ -1,9 +1,6 @@
 package com.springframework.springbootpetclinic.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -15,6 +12,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class Person extends BaseEntity{
 
+    @Builder(builderMethodName = "personBuilder")
     public Person(Long id, String firstName, String lastName){
         super(id);
         this.firstName = firstName;
